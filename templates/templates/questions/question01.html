@@ -1,0 +1,23 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion1">
+    <div class="form-group">
+        <div class="col">
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <strong>1. Tristeza.</strong>
+            <br>
+            <input type="radio" name="item1" value="0">No me siento triste. </input>
+            <br>
+            <input type="radio" name="item1" value="1">Me siento triste gran parte del tiempo. </input>
+            <br>
+            <input type="radio" name="item1" value="2">Me siento triste todo el tiempo. </input>
+            <br>
+            <input type="radio" name="item1" value="3">Me siento tan triste o soy tan infeliz que no puedo soportarlo. </input>
+            <br>
+            <button class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+{% endblock content %}
+
