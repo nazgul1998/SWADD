@@ -1,0 +1,28 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion12">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta12.png" alt="pregunta12_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>12. Pérdida de Interés.</strong>
+            <br>
+            <input type="radio" name="item12" value="0">No he perdido el interés en otras actividades o personas.</input>
+            <br>
+            <input type="radio" name="item12" value="1">Estoy menos interesado que antes en otras personas o cosas.</input>
+            <br>
+            <input type="radio" name="item12" value="2">He perdido casi todo el interés en otras personas o cosas.</input>
+            <br>
+            <input type="radio" name="item12" value="3">Me es difícil interesarme por algo.</input>
+              
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}
+

@@ -1,0 +1,27 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion20">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta20.png" alt="pregunta20_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>20. Cansancio o Fatiga.</strong>
+            <br>
+            <input type="radio" name="item20" value="0">No estoy más cansado o fatigado que lo habitual.</input>
+            <br>
+            <input type="radio" name="item20" value="1">Me fatigo o me canso más fácilmente que lo habitual.</input>
+            <br>
+            <input type="radio" name="item20" value="2">Estoy demasiado fatigado o cansado para hacer muchas de las cosas que solía hacer.</input>
+            <br>
+            <input type="radio" name="item20" value="3">Estoy demasiado fatigado o cansado para hacer la mayoría de las cosas que solía hacer. </input>
+            
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

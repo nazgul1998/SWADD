@@ -1,0 +1,32 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion16">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta16.png" alt="pregunta16_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>16. Cambios en los Hábitos de Sueño.</strong>
+            <br>
+            <input type="radio" name="item16" value="0">No he experimentado ningún cambio en mis hábitos de sueño.</input>
+            <br>
+            <input type="radio" name="item16" value="1">Duermo un poco más que lo habitual.</input>
+            <br>
+            <input type="radio" name="item16" value="1">Duermo un poco menos que lo habitual.</input>
+            <br>
+            <input type="radio" name="item16" value="2">Duermo mucho más que lo habitual. </input>
+            <br>
+            <input type="radio" name="item16" value="2">Duermo mucho menos que lo habitual. </input>
+            <br>
+            <input type="radio" name="item16" value="3">Duermo la mayor parte del día. </input>
+            <br>
+            <input type="radio" name="item16" value="3">Me despierto 1-2 horas más temprano y no puedo volver a dormirme. </input>
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

@@ -56,6 +56,8 @@ class Paciente(db.Model):
 
     total = db.Column(db.Integer)
     
+    resultado_final = db.Column(db.String(300))
+    
     def __init__(self,nombre_completo,estado_civil,edad,sexo,ocupacion,educacion,fecha):
         self.nombre_completo = nombre_completo
         self.estado_civil = estado_civil
@@ -111,7 +113,7 @@ class Paciente(db.Model):
         self.emocion21 = "a"
 
         self.total = 0
-        
+        self.resultado_final = ""
         
     def __str__(self) -> str:
         cadena = self.nombre_completo + " " + self.estado_civil + " " + str(self.edad) + " " + self.sexo + " " + self.ocupacion + " " + self.educacion + " " + str(self.fecha)

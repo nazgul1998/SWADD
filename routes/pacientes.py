@@ -1110,4 +1110,1000 @@ def emocion11():
     paciente.emocion11 = animo
     db.session.commit()
     print("pregunta 11 guardada con exito")
-    return render_template("/templates/questions/question11.html", id=id)
+    return render_template("/templates/questions/question12.html", id=id)
+
+
+
+@pacientes.route("/quest12/<int:id>", methods=["GET"])
+def question12(id):
+    return render_template("/templates/questions/question12.html", id=id)
+    
+@pacientes.route("/emocion12", methods=["POST"])
+def emocion12():
+    
+    if not ("item12" in request.form):
+        id = int(request.form['id'])
+        return render_template("/templates/questions/question12.html", id=id)
+    
+    emocion = obtener_frame_camara()
+    while emocion == "":
+        emocion = obtener_frame_camara()
+    puntaje = int(request.form['item12'])
+    animo = imagePaths[emocion[0]]
+    print(animo + " - " + str(puntaje))
+    id = int(request.form['id'])
+    nuevo = -1
+    #['Disgustado', 'Enojado', 'Feliz', 'Serio', 'Sorprendido', 'Temerozo', 'Triste']
+    if(animo == 'Feliz'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 1
+        elif(puntaje == 3):
+            nuevo = 1
+    elif(animo == 'Enojado'):
+        if(puntaje == 0):
+            nuevo = 2
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = 3
+        elif(puntaje == 3):
+            nuevo = puntaje
+    elif(animo == 'Disgustado'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 1
+        elif(puntaje == 2):
+            nuevo = 1
+        elif(puntaje == 3):
+            nuevo = puntaje
+    elif(animo == 'Serio'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Sorprendido'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo =puntaje
+        elif(puntaje == 3):
+            nuevo = 2
+            
+    elif(animo == 'Temerozo'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 3
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Triste'):
+        if(puntaje == 0):
+            nuevo = 2
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+            
+    print(str(animo) + " - " + str(nuevo))      
+    paciente = Paciente.query.get(id)
+    paciente.item12 = nuevo
+    paciente.emocion12 = animo
+    db.session.commit()
+    print("pregunta 12 guardada con exito")
+    return render_template("/templates/questions/question13.html", id=id)
+
+
+
+@pacientes.route("/quest13/<int:id>", methods=["GET"])
+def question13(id):
+    return render_template("/templates/questions/question13.html", id=id)
+    
+@pacientes.route("/emocion13", methods=["POST"])
+def emocion13():
+    
+    if not ("item13" in request.form):
+        id = int(request.form['id'])
+        return render_template("/templates/questions/question13.html", id=id)
+    
+    emocion = obtener_frame_camara()
+    while emocion == "":
+        emocion = obtener_frame_camara()
+    puntaje = int(request.form['item13'])
+    animo = imagePaths[emocion[0]]
+    print(animo + " - " + str(puntaje))
+    id = int(request.form['id'])
+    nuevo = -1
+    #['Disgustado', 'Enojado', 'Feliz', 'Serio', 'Sorprendido', 'Temerozo', 'Triste']
+    if(animo == 'Feliz'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 1
+        elif(puntaje == 3):
+            nuevo = 1
+    elif(animo == 'Enojado'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 3
+        elif(puntaje == 3):
+            nuevo = puntaje
+    elif(animo == 'Disgustado'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = 2
+    elif(animo == 'Serio'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = 2
+            
+    elif(animo == 'Sorprendido'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo =puntaje
+        elif(puntaje == 3):
+            nuevo = 2
+            
+    elif(animo == 'Temerozo'):
+        if(puntaje == 0):
+            nuevo = 2
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = 2
+            
+    elif(animo == 'Triste'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 1
+        elif(puntaje == 3):
+            nuevo = 2
+            
+            
+    print(str(animo) + " - " + str(nuevo))      
+    paciente = Paciente.query.get(id)
+    paciente.item13 = nuevo
+    paciente.emocion13 = animo
+    db.session.commit()
+    print("pregunta 13 guardada con exito")
+    return render_template("/templates/questions/question14.html", id=id)
+
+
+@pacientes.route("/quest14/<int:id>", methods=["GET"])
+def question14(id):
+    return render_template("/templates/questions/question14.html", id=id)
+    
+@pacientes.route("/emocion14", methods=["POST"])
+def emocion14():
+    if not ("item14" in request.form):
+        id = int(request.form['id'])
+        return render_template("/templates/questions/question14.html", id=id)
+    
+    emocion = obtener_frame_camara()
+    while emocion == "":
+        emocion = obtener_frame_camara()
+    puntaje = int(request.form['item14'])
+    animo = imagePaths[emocion[0]]
+    print(animo + " - " + str(puntaje))
+    id = int(request.form['id'])
+    nuevo = -1
+    #['Disgustado', 'Enojado', 'Feliz', 'Serio', 'Sorprendido', 'Temerozo', 'Triste']
+    if(animo == 'Feliz'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 1
+        elif(puntaje == 3):
+            nuevo = 1
+    elif(animo == 'Enojado'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = 2
+    elif(animo == 'Disgustado'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = 2
+    elif(animo == 'Serio'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Sorprendido'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 1
+        elif(puntaje == 3):
+            nuevo = 2
+            
+    elif(animo == 'Temerozo'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = 2
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Triste'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = 3
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+            
+    print(str(animo) + " - " + str(nuevo))      
+    paciente = Paciente.query.get(id)
+    paciente.item14 = nuevo
+    paciente.emocion14 = animo
+    db.session.commit()
+    print("pregunta 14 guardada con exito")
+    return render_template("/templates/questions/question15.html", id=id)
+
+
+
+
+@pacientes.route("/quest15/<int:id>", methods=["GET"])
+def question15(id):
+    return render_template("/templates/questions/question15.html", id=id)
+    
+@pacientes.route("/emocion15", methods=["POST"])
+def emocion15():
+    if not ("item15" in request.form):
+        id = int(request.form['id'])
+        return render_template("/templates/questions/question15.html", id=id)
+    
+    emocion = obtener_frame_camara()
+    while emocion == "":
+        emocion = obtener_frame_camara()
+    puntaje = int(request.form['item15'])
+    animo = imagePaths[emocion[0]]
+    print(animo + " - " + str(puntaje))
+    id = int(request.form['id'])
+    nuevo = -1
+    #['Disgustado', 'Enojado', 'Feliz', 'Serio', 'Sorprendido', 'Temerozo', 'Triste']
+    if(animo == 'Feliz'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 1
+        elif(puntaje == 3):
+            nuevo = 1
+    elif(animo == 'Enojado'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = 2
+    elif(animo == 'Disgustado'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = 2
+    elif(animo == 'Serio'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Sorprendido'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 1
+        elif(puntaje == 3):
+            nuevo = 2
+            
+    elif(animo == 'Temerozo'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = 2
+            
+    elif(animo == 'Triste'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 3
+        elif(puntaje == 3):
+            nuevo = 3
+            
+            
+    print(str(animo) + " - " + str(nuevo))      
+    paciente = Paciente.query.get(id)
+    paciente.item15 = nuevo
+    paciente.emocion15 = animo
+    db.session.commit()
+    print("pregunta 15 guardada con exito")
+    return render_template("/templates/questions/question16.html", id=id)
+
+
+
+
+@pacientes.route("/quest16/<int:id>", methods=["GET"])
+def question16(id):
+    return render_template("/templates/questions/question16.html", id=id)
+    
+@pacientes.route("/emocion16", methods=["POST"])
+def emocion16():
+    if not ("item16" in request.form):
+        id = int(request.form['id'])
+        return render_template("/templates/questions/question16.html", id=id)
+    
+    emocion = obtener_frame_camara()
+    while emocion == "":
+        emocion = obtener_frame_camara()
+    puntaje = int(request.form['item16'])
+    animo = imagePaths[emocion[0]]
+    print(animo + " - " + str(puntaje))
+    id = int(request.form['id'])
+    nuevo = -1
+    #['Disgustado', 'Enojado', 'Feliz', 'Serio', 'Sorprendido', 'Temerozo', 'Triste']
+    if(animo == 'Feliz'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = 2
+    elif(animo == 'Enojado'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = 3
+        elif(puntaje == 3):
+            nuevo = puntaje
+    elif(animo == 'Disgustado'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = 3
+        elif(puntaje == 3):
+            nuevo = puntaje
+    elif(animo == 'Serio'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Sorprendido'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Temerozo'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 3
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Triste'):
+        if(puntaje == 0):
+            nuevo = 2
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+            
+    print(str(animo) + " - " + str(nuevo))      
+    paciente = Paciente.query.get(id)
+    paciente.item16 = nuevo
+    paciente.emocion16 = animo
+    db.session.commit()
+    print("pregunta 16 guardada con exito")
+    return render_template("/templates/questions/question17.html", id=id)
+
+
+
+
+@pacientes.route("/quest17/<int:id>", methods=["GET"])
+def question17(id):
+    return render_template("/templates/questions/question17.html", id=id)
+    
+@pacientes.route("/emocion17", methods=["POST"])
+def emocion17():
+    if not ("item17" in request.form):
+        id = int(request.form['id'])
+        return render_template("/templates/questions/question17.html", id=id)
+    
+    emocion = obtener_frame_camara()
+    while emocion == "":
+        emocion = obtener_frame_camara()
+    puntaje = int(request.form['item17'])
+    animo = imagePaths[emocion[0]]
+    print(animo + " - " + str(puntaje))
+    id = int(request.form['id'])
+    nuevo = -1
+    #['Disgustado', 'Enojado', 'Feliz', 'Serio', 'Sorprendido', 'Temerozo', 'Triste']
+    if(animo == 'Feliz'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 1
+        elif(puntaje == 3):
+            nuevo = 1
+    elif(animo == 'Enojado'):
+        if(puntaje == 0):
+            nuevo = 2
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = 3
+        elif(puntaje == 3):
+            nuevo = puntaje
+    elif(animo == 'Disgustado'):
+        if(puntaje == 0):
+            nuevo = 2
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Serio'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Sorprendido'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 1
+        elif(puntaje == 3):
+            nuevo = 2
+            
+    elif(animo == 'Temerozo'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = 2
+            
+    elif(animo == 'Triste'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 1
+        elif(puntaje == 3):
+            nuevo = 2
+            
+            
+    print(str(animo) + " - " + str(nuevo))      
+    paciente = Paciente.query.get(id)
+    paciente.item17 = nuevo
+    paciente.emocion17 = animo
+    db.session.commit()
+    print("pregunta 17 guardada con exito")
+    return render_template("/templates/questions/question18.html", id=id)
+
+
+
+
+@pacientes.route("/quest18/<int:id>", methods=["GET"])
+def question18(id):
+    return render_template("/templates/questions/question18.html", id=id)
+    
+@pacientes.route("/emocion18", methods=["POST"])
+def emocion18():
+    if not ("item18" in request.form):
+        id = int(request.form['id'])
+        return render_template("/templates/questions/question18.html", id=id)
+    
+    emocion = obtener_frame_camara()
+    while emocion == "":
+        emocion = obtener_frame_camara()
+    puntaje = int(request.form['item18'])
+    animo = imagePaths[emocion[0]]
+    print(animo + " - " + str(puntaje))
+    id = int(request.form['id'])
+    nuevo = -1
+    #['Disgustado', 'Enojado', 'Feliz', 'Serio', 'Sorprendido', 'Temerozo', 'Triste']
+    if(animo == 'Feliz'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = 1
+    elif(animo == 'Enojado'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = 3
+        elif(puntaje == 3):
+            nuevo = puntaje
+    elif(animo == 'Disgustado'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 1
+        elif(puntaje == 3):
+            nuevo = 1
+    elif(animo == 'Serio'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Sorprendido'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo =puntaje
+        elif(puntaje == 3):
+            nuevo = 2
+            
+    elif(animo == 'Temerozo'):
+        if(puntaje == 0):
+            nuevo = 2
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = 3
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Triste'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+            
+    print(str(animo) + " - " + str(nuevo))      
+    paciente = Paciente.query.get(id)
+    paciente.item18 = nuevo
+    paciente.emocion18 = animo
+    db.session.commit()
+    print("pregunta 18 guardada con exito")
+    return render_template("/templates/questions/question19.html", id=id)
+
+
+
+
+@pacientes.route("/quest19/<int:id>", methods=["GET"])
+def question19(id):
+    return render_template("/templates/questions/question19.html", id=id)
+    
+@pacientes.route("/emocion19", methods=["POST"])
+def emocion19():
+    if not ("item19" in request.form):
+        id = int(request.form['id'])
+        return render_template("/templates/questions/question19.html", id=id)
+    
+    emocion = obtener_frame_camara()
+    while emocion == "":
+        emocion = obtener_frame_camara()
+    puntaje = int(request.form['item19'])
+    animo = imagePaths[emocion[0]]
+    print(animo + " - " + str(puntaje))
+    id = int(request.form['id'])
+    nuevo = -1
+    #['Disgustado', 'Enojado', 'Feliz', 'Serio', 'Sorprendido', 'Temerozo', 'Triste']
+    if(animo == 'Feliz'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = 2
+    elif(animo == 'Enojado'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = 2
+    elif(animo == 'Disgustado'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = puntaje
+    elif(animo == 'Serio'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Sorprendido'):
+        if(puntaje == 0):
+            nuevo = 2
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = 3
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Temerozo'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = 3
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Triste'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 1
+        elif(puntaje == 3):
+            nuevo = 2
+            
+            
+    print(str(animo) + " - " + str(nuevo))      
+    paciente = Paciente.query.get(id)
+    paciente.item19 = nuevo
+    paciente.emocion19 = animo
+    db.session.commit()
+    print("pregunta 19 guardada con exito")
+    return render_template("/templates/questions/question20.html", id=id)
+
+
+
+
+
+@pacientes.route("/quest20/<int:id>", methods=["GET"])
+def question20(id):
+    return render_template("/templates/questions/question20.html", id=id)
+    
+@pacientes.route("/emocion20", methods=["POST"])
+def emocion20():
+    if not ("item20" in request.form):
+        id = int(request.form['id'])
+        return render_template("/templates/questions/question20.html", id=id)
+    
+    emocion = obtener_frame_camara()
+    while emocion == "":
+        emocion = obtener_frame_camara()
+    puntaje = int(request.form['item20'])
+    animo = imagePaths[emocion[0]]
+    print(animo + " - " + str(puntaje))
+    id = int(request.form['id'])
+    nuevo = -1
+    #['Disgustado', 'Enojado', 'Feliz', 'Serio', 'Sorprendido', 'Temerozo', 'Triste']
+    if(animo == 'Feliz'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 1
+        elif(puntaje == 3):
+            nuevo = 2
+    elif(animo == 'Enojado'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = 3
+        elif(puntaje == 3):
+            nuevo = puntaje
+    elif(animo == 'Disgustado'):
+        if(puntaje == 0):
+            nuevo = 0
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 1
+        elif(puntaje == 3):
+            nuevo = 2
+    elif(animo == 'Serio'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Sorprendido'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo =puntaje
+        elif(puntaje == 3):
+            nuevo = 2
+            
+    elif(animo == 'Temerozo'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = 3
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Triste'):
+        if(puntaje == 0):
+            nuevo = 2
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+            
+    print(str(animo) + " - " + str(nuevo))      
+    paciente = Paciente.query.get(id)
+    paciente.item20 = nuevo
+    paciente.emocion20 = animo
+    db.session.commit()
+    print("pregunta 20 guardada con exito")
+    return render_template("/templates/questions/question21.html", id=id)
+
+
+
+
+
+
+@pacientes.route("/quest21/<int:id>", methods=["GET"])
+def question21(id):
+    return render_template("/templates/questions/question21.html", id=id)
+    
+@pacientes.route("/emocion21", methods=["POST"])
+def emocion21():
+    if not ("item21" in request.form):
+        id = int(request.form['id'])
+        return render_template("/templates/questions/question21.html", id=id)
+    
+    emocion = obtener_frame_camara()
+    while emocion == "":
+        emocion = obtener_frame_camara()
+    puntaje = int(request.form['item21'])
+    animo = imagePaths[emocion[0]]
+    print(animo + " - " + str(puntaje))
+    id = int(request.form['id'])
+    nuevo = -1
+    #['Disgustado', 'Enojado', 'Feliz', 'Serio', 'Sorprendido', 'Temerozo', 'Triste']
+    if(animo == 'Feliz'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 1
+        elif(puntaje == 3):
+            nuevo = 1
+    elif(animo == 'Enojado'):
+        if(puntaje == 0):
+            nuevo = 2
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = 3
+        elif(puntaje == 3):
+            nuevo = puntaje
+    elif(animo == 'Disgustado'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = 3
+        elif(puntaje == 3):
+            nuevo = puntaje
+    elif(animo == 'Serio'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Sorprendido'):
+        if(puntaje == 0):
+            nuevo = puntaje
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 1
+        elif(puntaje == 3):
+            nuevo = 2
+            
+    elif(animo == 'Temerozo'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = puntaje
+        elif(puntaje == 2):
+            nuevo = 3
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+    elif(animo == 'Triste'):
+        if(puntaje == 0):
+            nuevo = 1
+        elif(puntaje == 1):
+            nuevo = 2
+        elif(puntaje == 2):
+            nuevo = puntaje
+        elif(puntaje == 3):
+            nuevo = puntaje
+            
+            
+    print(str(animo) + " - " + str(nuevo))      
+    paciente = Paciente.query.get(id)
+    paciente.item21 = nuevo
+    paciente.emocion21 = animo
+    db.session.commit()
+    print("pregunta 21 guardada con exito")
+    paciente.total = paciente.item1 + paciente.item2 + paciente.item3 +paciente.item4 +paciente.item5 + paciente.item6 + paciente.item7 +paciente.item8 + paciente.item9 +paciente.item10 +paciente.item11+paciente.item12 + paciente.item13 + paciente.item14+paciente.item15+paciente.item16+paciente.item17+paciente.item18+paciente.item19+paciente.item20+paciente.item21
+    if paciente.total>=0 and paciente.total<=13:
+        paciente.resultado_final = "Mínina depresión."
+    elif paciente.total>=14 and paciente.total<=19:
+        paciente.resultado_final = "Depresión leve."
+    elif paciente.total>=20 and paciente.total<=28:
+        paciente.resultado_final = "Depresión moderada."
+    elif paciente.total>=29 and paciente.total<=63:
+        paciente.resultado_final = "Depresión grave."
+        
+    db.session.commit()
+    print("pregunta 21 guardada con exito")
+    return render_template("/templates/agradecimiento.html", id=id)
+    
+

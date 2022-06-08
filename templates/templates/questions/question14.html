@@ -1,0 +1,27 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion14">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta14.png" alt="pregunta14_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>14. Desvalorización.</strong>
+            <br>
+            <input type="radio" name="item14" value="0">No siento que yo no sea valioso.</input>
+            <br>
+            <input type="radio" name="item14" value="1">No me considero a mi mismo tan valioso y útil como solía considerarme.</input>
+            <br>
+            <input type="radio" name="item14" value="2">Me siento menos valioso cuando me comparo con otros. </input>
+            <br>
+            <input type="radio" name="item14" value="3">Siento que no valgo nada.</input>
+        
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

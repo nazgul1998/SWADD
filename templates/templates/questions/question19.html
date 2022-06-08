@@ -1,0 +1,27 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion19">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta19.png" alt="pregunta19_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>19. Dificultad de Concentración.</strong>
+            <br>
+            <input type="radio" name="item19" value="0">Puedo concentrarme tan bien como siempre.</input>
+            <br>
+            <input type="radio" name="item19" value="1">No puedo concentrarme tan bien como habitualmente.</input>
+            <br>
+            <input type="radio" name="item19" value="2">Me es difícil mantener la mente en algo por mucho tiempo.</input>
+            <br>
+            <input type="radio" name="item19" value="3">Encuentro que no puedo concentrarme en nada.</input>
+                          
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

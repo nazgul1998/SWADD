@@ -1,0 +1,27 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion15">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta15.png" alt="pregunta15_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>15. Pérdida de Energía.</strong>
+            <br>
+            <input type="radio" name="item15" value="0">Tengo tanta energía como siempre.</input>
+            <br>
+            <input type="radio" name="item15" value="1">Tengo menos energía que la que solía tener.</input>
+            <br>
+            <input type="radio" name="item15" value="2">No tengo suficiente energía para hacer demasiado.</input>
+            <br>
+            <input type="radio" name="item15" value="3">No tengo energía suficiente para hacer nada.</input>
+                        
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

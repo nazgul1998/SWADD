@@ -1,0 +1,28 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion21">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta21.png" alt="pregunta21_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>21. Pérdida de Interés en el Sexo.</strong>
+            <br>
+            <input type="radio" name="item21" value="0">No he notado ningún cambio reciente en mi interés por el sexo.</input>
+            <br>
+            <input type="radio" name="item21" value="1">Estoy menos interesado en el sexo de lo que solía estarlo.</input>
+            <br>
+            <input type="radio" name="item21" value="2">Estoy mucho menos interesado en el sexo.</input>
+            <br>
+            <input type="radio" name="item21" value="3">He perdido completamente el interés en el sexo.</input>
+            <br>
+            <input type="radio" name="item21" value="0">Prefiero no responder.</input>      
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

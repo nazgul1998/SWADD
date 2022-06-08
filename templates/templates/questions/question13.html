@@ -1,0 +1,27 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion13">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta13.png" alt="pregunta13_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>13. Indecisión.</strong>
+            <br>
+            <input type="radio" name="item13" value="0">Tomo mis propias decisiones tan bien como siempre.</input>
+            <br>
+            <input type="radio" name="item13" value="1">Me resulta más difícil que de costumbre tomar decisiones.</input>
+            <br>
+            <input type="radio" name="item13" value="2">Encuentro mucha más dificultad que antes para tomar decisiones.</input>
+            <br>
+            <input type="radio" name="item13" value="3">Tengo problemas para tomar cualquier decisión.</input>
+                        
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

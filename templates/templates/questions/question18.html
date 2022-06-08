@@ -1,0 +1,32 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion18">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta18.png" alt="pregunta18_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>18. Cambios en el Apetito.</strong>
+            <br>
+            <input type="radio" name="item18" value="0">No he experimentado ningún cambio en mi apetito.</input>
+            <br>
+            <input type="radio" name="item18" value="1">Mi apetito es un poco menor que lo habitual.</input>
+            <br>
+            <input type="radio" name="item18" value="1">Mi apetito es un poco mayor que lo habitual.</input>
+            <br>
+            <input type="radio" name="item18" value="2">Mi apetito es mucho menor que antes.</input>
+            <br>
+            <input type="radio" name="item18" value="2">Mi apetito es mucho mayor que lo habitual.</input>
+            <br>
+            <input type="radio" name="item18" value="3">No tengo apetito en absoluto.</input>
+            <br>
+            <input type="radio" name="item18" value="3">Quiero comer todo el día.</input>
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

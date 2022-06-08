@@ -1,0 +1,27 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion17">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta17.png" alt="pregunta17_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>17. Irritabilidad.</strong>
+            <br>
+            <input type="radio" name="item17" value="0">No estoy tan irritable que lo habitual.</input>
+            <br>
+            <input type="radio" name="item17" value="1">Estoy más irritable que lo habitual. </input>
+            <br>
+            <input type="radio" name="item17" value="2">Estoy mucho más irritable que lo habitual.</input>
+            <br>
+            <input type="radio" name="item17" value="3">Estoy irritable todo el tiempo. </input>
+                          
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}
