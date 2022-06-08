@@ -3,8 +3,11 @@
 {% block content %}
 <form method="POST" action="/emocion1">
     <div class="form-group">
-        <div class="col">
+        <div class="col centrado">
+            <img src="/static/imgs/pregunta1.png" alt="pregunta1_img" class="image">
+            <br>
             <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
             <strong>1. Tristeza.</strong>
             <br>
             <input type="radio" name="item1" value="0">No me siento triste. </input>
@@ -14,10 +17,37 @@
             <input type="radio" name="item1" value="2">Me siento triste todo el tiempo. </input>
             <br>
             <input type="radio" name="item1" value="3">Me siento tan triste o soy tan infeliz que no puedo soportarlo. </input>
-            <br>
-            <button class="btn btn-primary">Continuar...</button>
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
         </div>
     </div>
 </form>
+
+<style>
+    
+    .image {
+        width: 25%;
+        height: auto;
+    }
+    .centrado{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        align-items:center;
+        text-align:center;
+        align-self: center;
+        align-content: center;
+        text-align: center;
+    }
+    .izquierda{
+       
+        align-items:flex-start;
+        text-align:start;
+        align-self:flex-start;
+        align-content:flex-start;
+        text-align: start;
+    }
+</style>
 {% endblock content %}
 

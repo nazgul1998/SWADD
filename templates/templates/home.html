@@ -1,10 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>SWADD</title>
-</head>
-<body>
-    <a href="/indicaciones">Realizar prueba</a>
-</body>
-</html>
+{% extends '/templates/base/base.html' %}
+{% block content %}
+    <div class="container">
+        <img src="/static/imgs/home_cat.jpg" alt="cat_sad" class="img">
+        <div class="texto-encima centrado">
+            <p>Las buenas cosas ocurren todos los días. Solo nos tenemos que dar cuenta de ellas.</p>
+            <a class="btn btn-primary centrar-texto" href="/indicaciones">Comerzar test</a>
+        </div>
+        
+    </div>
+
+    <style>
+        .contenedor{
+            position: relative;
+            display: inline-block;
+            text-align: center;
+        }
+        .texto-encima{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .centrado{
+            position: absolute;
+            top: 30%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            
+        }
+
+        .centrar-texto {
+            align-items:center;
+            text-align:center;
+            align-self: center;
+            align-content: center;
+            text-align: center;
+        }
+
+        div.container {
+            width: 96%;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        p {
+            display: block;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            margin-left: 0;
+            margin-right: 0;
+            color: white;
+            border-color: black;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+        
+
+{% endblock %}
