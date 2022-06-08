@@ -3,7 +3,7 @@
 {% block content %}
 <form method="POST" action="/emocion1">
     <div class="form-group">
-        <div class="col centrado">
+        <div class="col centrar-todo">
             <img src="/static/imgs/pregunta1.png" alt="pregunta1_img" class="image">
             <br>
             <input value="{{id}}" name="id" id="id" hidden="True"></input>
@@ -23,31 +23,5 @@
     </div>
 </form>
 
-<style>
-    
-    .image {
-        width: 25%;
-        height: auto;
-    }
-    .centrado{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        align-items:center;
-        text-align:center;
-        align-self: center;
-        align-content: center;
-        text-align: center;
-    }
-    .izquierda{
-       
-        align-items:flex-start;
-        text-align:start;
-        align-self:flex-start;
-        align-content:flex-start;
-        text-align: start;
-    }
-</style>
 {% endblock content %}
 

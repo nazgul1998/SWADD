@@ -1,0 +1,28 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion11">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta11.png" alt="pregunta11_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>11. Agitación.</strong>
+            <br>
+            <input type="radio" name="item11" value="0">No estoy más inquieto o tenso que lo habitual.</input>
+            <br>
+            <input type="radio" name="item11" value="1">Me siento más inquieto o tenso que lo habitual.</input>
+            <br>
+            <input type="radio" name="item11" value="2">Estoy tan inquieto o agitado que me es difícil quedarme quieto.</input>
+            <br>
+            <input type="radio" name="item11" value="3">Estoy tan inquieto o agitado que tengo que estar siempre en movimiento o haciendo algo.</input>
+                        
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}
+

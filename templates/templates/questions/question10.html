@@ -1,0 +1,27 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion10">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta10.png" alt="pregunta10_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>10. Llanto.</strong>
+            <br>
+            <input type="radio" name="item10" value="0">No lloro más de lo que solía hacerlo.</input>
+            <br>
+            <input type="radio" name="item10" value="1">No lloro más de lo que solía hacerlo. </input>
+            <br>
+            <input type="radio" name="item10" value="2">Lloro por cualquier pequeñez.</input>
+            <br>
+            <input type="radio" name="item10" value="3">Siento ganas de llorar pero no puedo.</input>
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}
+

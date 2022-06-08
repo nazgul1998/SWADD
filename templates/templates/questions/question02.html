@@ -1,0 +1,26 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion2">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta2.png" alt="pregunta2_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>2. Pesimismo.</strong>
+            <br>
+            <input type="radio" name="item2" value="0"> No estoy desalentado respecto del mi futuro.</input>
+            <br>
+            <input type="radio" name="item2" value="1"> Me siento más desalentado respecto de mi futuro que lo que solía estarlo.</input>
+            <br>
+            <input type="radio" name="item2" value="2">No espero que las cosas funcionen para mi. </input>
+            <br>
+            <input type="radio" name="item2" value="3">Siento que no hay esperanza para mi futuro y que sólo puede empeorar.</input>
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

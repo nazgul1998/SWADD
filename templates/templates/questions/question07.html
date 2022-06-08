@@ -1,0 +1,28 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion7">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta7.png" alt="pregunta7_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>7. Disconformidad con uno mismo.</strong>
+            <br>
+            <input type="radio" name="item7" value="0">Siento acerca de mi lo mismo que siempre. </input>
+            <br>
+            <input type="radio" name="item7" value="1">He perdido la confianza en mí mismo. </input>
+            <br>
+            <input type="radio" name="item7" value="2">Estoy decepcionado conmigo mismo. </input>
+            <br>
+            <input type="radio" name="item7" value="3">No me gusto a mí mismo. </input>
+                        
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}
+

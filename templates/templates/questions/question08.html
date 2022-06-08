@@ -1,0 +1,27 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion8">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta8.png" alt="pregunta8_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>8. Autocrítica .</strong>
+            <br>
+            <input type="radio" name="item8" value="0">No me critico ni me culpo más de lo habitual.</input>
+            <br>
+            <input type="radio" name="item8" value="1">Estoy más crítico conmigo mismo de lo que solía estarlo.</input>
+            <br>
+            <input type="radio" name="item8" value="2">Me critico a mí mismo por todos mis errores.</input>
+            <br>
+            <input type="radio" name="item8" value="3">Me culpo a mí mismo por todo lo malo que sucede.</input>
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}
+

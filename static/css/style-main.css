@@ -1,0 +1,77 @@
+.contenedor {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.texto-encima {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.centrado {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+
+}
+
+.image {
+    width: 25%;
+    height: auto;
+}
+.centrar-todo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items:center;
+    text-align:center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+}
+.izquierda{
+   
+    align-items:flex-start;
+    text-align:start;
+    align-self:flex-start;
+    align-content:flex-start;
+    text-align: start;
+}
+
+.centrar-texto {
+    align-items: center;
+    text-align: center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+}
+
+.container-img {
+    width: 96%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.texto-imagen {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    color: white;
+    border-color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+strong{
+    color: rgba(0, 0, 0, 0.856)
+}

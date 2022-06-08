@@ -1,0 +1,27 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion9">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta9.png" alt="pregunta9_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>9. Pensamientos o Deseos Suicidas.</strong>
+            <br>
+            <input type="radio" name="item9" value="0">No tengo ningún pensamiento de matarme.</input>
+            <br>
+            <input type="radio" name="item9" value="1">He tenido pensamientos de matarme, pero no lo haría.</input>
+            <br>
+            <input type="radio" name="item9" value="2">Querría matarme.</input>
+            <br>
+            <input type="radio" name="item9" value="3">Me mataría si tuviera la oportunidad de hacerlo.</input>
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}
+

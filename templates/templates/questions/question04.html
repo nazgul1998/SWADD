@@ -1,0 +1,27 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion4">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta4.png" alt="pregunta4_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>4. Pérdida de Placer.</strong>
+            <br>
+            <input type="radio" name="item4" value="0">Obtengo tanto placer como siempre por las cosas de las que disfruto.</input>
+            <br>
+            <input type="radio" name="item4" value="1">No disfruto tanto de las cosas como solía hacerlo.  </input>
+            <br>
+            <input type="radio" name="item4" value="2"> Obtengo muy poco placer de las cosas que solía disfrutar.</input>
+            <br>
+            <input type="radio" name="item4" value="3">No puedo obtener ningún placer de las cosas de las que solía disfrutar.</input>            
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}
+

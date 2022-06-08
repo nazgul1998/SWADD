@@ -1,0 +1,28 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion6">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta6.png" alt="pregunta6_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>6. Sentimientos de Castigo.</strong>
+            <br>
+            <input type="radio" name="item6" value="0">No siento que este siendo castigado.</input>
+            <br>
+            <input type="radio" name="item6" value="1">Siento que tal vez pueda ser castigado.</input>
+            <br>
+            <input type="radio" name="item6" value="2">Espero ser castigado.</input>
+            <br>
+            <input type="radio" name="item6" value="3">Siento que estoy siendo castigado.</input>
+            
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}
+

@@ -1,0 +1,27 @@
+{% extends '/templates/base/base.html' %}
+
+{% block content %}
+<form method="POST" action="/emocion5">
+    <div class="form-group">
+        <div class="col centrar-todo">
+            <img src="/static/imgs/pregunta5.png" alt="pregunta5_img" class="image">
+            <br>
+            <input value="{{id}}" name="id" id="id" hidden="True"></input>
+            <br>
+            <strong>5. Sentimientos de Culpa.</strong>
+            <br>
+            <input type="radio" name="item5" value="0">No me siento particularmente culpable.</input>
+            <br>
+            <input type="radio" name="item5" value="1">Me siento culpable respecto de varias cosas que he hecho o que debería haber hecho.</input>
+            <br>
+            <input type="radio" name="item5" value="2">Me siento bastante culpable la mayor parte del tiempo. </input>
+            <br>
+            <input type="radio" name="item5" value="3">Me siento culpable todo el tiempo.</input>            
+            <br><br>
+            <button type="submit" class="btn btn-primary">Continuar...</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}
+
