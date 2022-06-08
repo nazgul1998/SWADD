@@ -1,8 +1,13 @@
 from multiprocessing.sharedctypes import Value
-from flask import Blueprint, render_template, request, Response
+from flask import Blueprint, render_template, request, Response, flash
 from models.pacientes import Paciente
 from utils.db import db
 from utils.gordon import obtener_frame_camara, imagePaths
+from dotenv import load_dotenv
+load_dotenv()
+import os 
+import hashlib
+
 
 pacientes = Blueprint('pacientes', __name__)
 
@@ -23,10 +28,11 @@ def datos_basicos():
     ocupacion = "Estudiante"
     educacion = "Secundaria"
     fecha = request.form['fecha']
+    fecha = request.form['fecha']
+    invitacion = request.form['invitacion']
     
     if(nombre_completo == "" or estado_civil == "" or edad == "" or sexo=="" or fecha==""):
         return render_template("/templates/indicaciones.html")
-        
     
     nuevo_paciente = Paciente(nombre_completo,estado_civil,edad,sexo,ocupacion,educacion,fecha)
     db.session.add(nuevo_paciente)
