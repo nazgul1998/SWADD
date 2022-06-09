@@ -17,6 +17,7 @@
             <input type="radio" name="item5" value="2">Me siento bastante culpable la mayor parte del tiempo. </input>
             <br>
             <input type="radio" name="item5" value="3">Me siento culpable todo el tiempo.</input>            
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
             <br><br>
             <button type="submit" class="btn btn-primary">Continuar...</button>
         </div>

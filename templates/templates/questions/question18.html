@@ -23,6 +23,7 @@
             <input type="radio" name="item18" value="3">No tengo apetito en absoluto.</input>
             <br>
             <input type="radio" name="item18" value="3">Quiero comer todo el día.</input>
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
             <br><br>
             <button type="submit" class="btn btn-primary">Continuar...</button>
         </div>

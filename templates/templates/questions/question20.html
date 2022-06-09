@@ -17,7 +17,7 @@
             <input type="radio" name="item20" value="2">Estoy demasiado fatigado o cansado para hacer muchas de las cosas que solía hacer.</input>
             <br>
             <input type="radio" name="item20" value="3">Estoy demasiado fatigado o cansado para hacer la mayoría de las cosas que solía hacer. </input>
-            
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
             <br><br>
             <button type="submit" class="btn btn-primary">Continuar...</button>
         </div>

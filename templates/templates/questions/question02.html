@@ -17,6 +17,7 @@
             <input type="radio" name="item2" value="2">No espero que las cosas funcionen para mi. </input>
             <br>
             <input type="radio" name="item2" value="3">Siento que no hay esperanza para mi futuro y que sólo puede empeorar.</input>
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
             <br><br>
             <button type="submit" class="btn btn-primary">Continuar...</button>
         </div>

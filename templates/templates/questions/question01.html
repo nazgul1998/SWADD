@@ -17,7 +17,10 @@
             <input type="radio" name="item1" value="2">Me siento triste todo el tiempo. </input>
             <br>
             <input type="radio" name="item1" value="3">Me siento tan triste o soy tan infeliz que no puedo soportarlo. </input>
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
             <br><br>
+            
+
             <button type="submit" class="btn btn-primary">Continuar...</button>
         </div>
     </div>

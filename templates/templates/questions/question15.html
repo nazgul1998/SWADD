@@ -17,7 +17,7 @@
             <input type="radio" name="item15" value="2">No tengo suficiente energía para hacer demasiado.</input>
             <br>
             <input type="radio" name="item15" value="3">No tengo energía suficiente para hacer nada.</input>
-                        
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>          
             <br><br>
             <button type="submit" class="btn btn-primary">Continuar...</button>
         </div>

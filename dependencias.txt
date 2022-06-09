@@ -8,5 +8,7 @@ opencv-python-headless==4.5.4.58
 opencv-contrib-python-headless==4.5.4.58
 Flask-reCaptcha==0.4.2
 python-dotenv==0.20.0
+Flask-WTF==1.0.1
+
 
 
