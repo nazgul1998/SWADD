@@ -1,5 +1,5 @@
 from multiprocessing.sharedctypes import Value
-from flask import Blueprint, render_template, request, Response, flash
+from flask import Blueprint, render_template, request, Response
 from models.pacientes import Paciente
 from utils.db import db
 from utils.gordon import obtener_frame_camara, imagePaths
@@ -29,7 +29,21 @@ def datos_basicos():
     educacion = "Secundaria"
     fecha = request.form['fecha']
     fecha = request.form['fecha']
-    invitacion = request.form['invitacion']
+    clave = ""
+    if ("invitacion" in request.form):
+        invitacion = request.form['invitacion']
+        clave = hashlib.sha256()
+        clave.update(bytes(invitacion,'utf-8'))
+        print (clave.hexdigest())
+        print (os.getenv('SECRET_VALUE').strip())
+        
+    if (clave.hexdigest() == os.getenv('SECRET_VALUE')):
+        print("invitado")
+        
+        
+    elif not (clave.hexdigest() == os.getenv('SECRET_VALUE')):
+        return render_template("/templates/indicaciones.html")
+    
     
     if(nombre_completo == "" or estado_civil == "" or edad == "" or sexo=="" or fecha==""):
         return render_template("/templates/indicaciones.html")
